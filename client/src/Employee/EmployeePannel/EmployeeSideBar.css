@@ -1,0 +1,98 @@
+/* Sidebar Container */
+.employee-sidebar-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  /* Sidebar */
+  .employee-sidebar {
+    width: 220px;
+    background: #fff;
+    transition: width 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .employee-sidebar.collapsed {
+    width: 65px;
+  }
+  
+  /* Sidebar Header (Toggle Button + Logo in one line) */
+  .employee-sidebar-header {
+    display: flex;
+    align-items: center;
+   
+    width: 100%;
+    padding: 10px;
+  }
+  
+  /* Toggle Button */
+  .sidebar-toggle-icon {
+    cursor: pointer;
+    color: #000;
+  }
+  
+  /* Logo */
+  .sidebar-logo {
+    max-width: 80px;
+    height: auto;
+    transition: opacity 0.3s ease, width 0.3s ease;
+    
+  }
+  
+ 
+  
+  /* Sidebar Menu */
+  .employee-sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    margin-top: 20px;
+  }
+  
+  .employee-sidebar-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.2s ease-in-out;
+    width: 100%;
+  }
+  
+  .employee-sidebar-button:hover
+   {
+    background: linear-gradient(to bottom, #16007a, #7a0045);
+  color: white;
+  }
+  
+  .employee-sidebar-button.logout {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.2s ease-in-out;
+    width: 100%;
+  }
+  .employee-sidebar-button.logout:hover {
+    background: linear-gradient(to bottom, #16007a, #7a0045);
+  color: white;
+  }
+  
+  /* Main Content */
+  .employee-sidebar-main {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  

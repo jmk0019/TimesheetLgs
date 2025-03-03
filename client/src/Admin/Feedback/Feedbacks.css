@@ -1,0 +1,90 @@
+/* General Styles */
+.feedbacks {
+  max-width: 1000px;
+  margin: 18px; /* Aligns UI from start */
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Title */
+.feedbacks-title {
+  font-size: 20px;
+  font-family: Calibri ;
+  font-weight: bold;
+  
+  margin-bottom: 15px;
+  color: black;
+}
+
+/* Feedback Table */
+.feedbacks-container {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-right: -65px;
+  
+}
+
+.feedback-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-left: -35px;
+  margin-top: -13px;
+}
+
+.feedback-table th,
+.feedback-table td {
+  padding: 12px 15px;
+  text-align: center; /* Align all content center */
+}
+
+.feedback-table td:nth-child(2),
+.feedback-table th:nth-child(2) {
+  text-align: left; /* Align Employee Name to left */
+}
+
+.feedback-table td:nth-child(3),
+.feedback-table th:nth-child(3) {
+  text-align: left; /* Align Feedback to left */
+}
+
+
+/* Table Header */
+.feedback-table th {
+  background: linear-gradient(to bottom, #16007a, #7a0045);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Table Row Styling */
+.feedback-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.feedback-table tr:hover {
+  background: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Table Data */
+.feedback-table td {
+  border-bottom: 1px solid #ddd;
+  color: #333;
+  font-size: 16px;
+}
+
+/* Reply Button */
+.reply-btn {
+  background: linear-gradient(to bottom, #16007a, #7a0045);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reply-btn:hover {
+  background: #7a0045;
+}

@@ -1,0 +1,57 @@
+/* Dashboard Container */
+.dashboard {
+  max-width: 900px;
+  margin: 18px;
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Dashboard Title */
+.dashboard-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #16007a;
+}
+
+/* Sections */
+.projects-section {
+  margin-bottom: 30px;
+}
+
+.projects-section h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #7a0045;
+}
+
+/* Project Box Container */
+.project-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Common Box Styling */
+.project-box {
+  padding: 15px;
+  border-radius: 10px;
+   width : 200px;
+   height: 130px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+/* Ongoing Projects - White Box */
+.project-box.ongoing {
+  background: white;
+  color: black;
+  border: 2px solid #16007a;
+}
+
+/* Completed Projects - Colored Box */
+.project-box.completed {
+  background: linear-gradient(to bottom, #16007a, #7a0045);
+  color: white;
+}
