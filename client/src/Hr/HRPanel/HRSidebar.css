@@ -1,0 +1,107 @@
+/* HR Layout */
+.hr-layoutsidebar {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  /* Sidebar Styling */
+  .hr-sidebar {
+    color: black;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    border-right: 1px solid #ccc;
+  }
+  
+  .hr-sidebar.collapsed {
+    width: 80px;
+  }
+  
+  /* Sidebar Header */
+  .hr-sidebar-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+  }
+  
+  .hr-menu-toggle {
+    cursor: pointer;
+    font-size: 22px;
+    color: black;
+  }
+  
+  .hr-sidebar-logo {
+    max-width: 70px; /* Adjust width as needed */
+    height: auto;
+    margin-left: 30px;
+  }
+  
+  /* Sidebar Menu */
+  .hr-sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .hr-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: white;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .hr-menu-item:hover {
+    background: linear-gradient(to bottom, #16007a, #7a0045);
+    color: white;
+  }
+  
+  .hr-menu-item:hover span,
+  .hr-menu-item:hover .hr-icon {
+    color: white !important;
+  }
+  
+  .hr-menu-item a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .hr-menu-item .hr-icon {
+    margin-right: 10px;
+    font-size: 20px;
+    color: black;
+  }
+  
+  .hr-menu-item:hover span,
+  .hr-menu-item:hover .hr-icon {
+    color: white !important;
+  }
+  
+  .hr-sidebar.collapsed .hr-menu-item {
+    justify-content: center;
+  }
+  
+  .hr-sidebar.collapsed .hr-menu-item .hr-icon {
+    margin-right: 0;
+  }
+  
+  .hr-sidebar.collapsed .hr-menu-item span {
+    display: none;
+  }
+  
+  /* Content */
+  .hr-content {
+    width: 100%;
+    overflow-y: auto;
+  }
+  

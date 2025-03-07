@@ -1,0 +1,99 @@
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .hr-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  }
+  
+  /* Login Box */
+  .hr-login-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .hr-login-box:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Title */
+  .hr-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  /* Input Fields */
+  .hr-input-group {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .hr-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  
+  .hr-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .hr-input:focus {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Login Button */
+  .hr-button {
+    width: 100%;
+    padding: 12px;
+    background: #ffffff;
+    color: #ff416c;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .hr-button:hover {
+    background: #ff2e63;
+    color: white;
+  }
+  
+  /* Forgot Password */
+  .hr-forgot-password {
+    margin-top: 12px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .hr-forgot-password:hover {
+    color: #dcdcdc;
+  }
+  

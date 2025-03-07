@@ -1,0 +1,92 @@
+/* Notifications List Page */
+.notifications-list-container {
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-left: 40px;
+  }
+  
+  /* Header with Button */
+  .notifications-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .add-notification-button {
+    background-color: #7a0045;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-notification-button:hover {
+    background-color: #5b0033;
+  }
+  
+  /* Notifications Table */
+  .notifications-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  .notifications-table th,
+  .notifications-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  .notifications-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .notifications-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Actions Buttons */
+  .edit-button,
+  .delete-button {
+    padding: 6px 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .edit-button {
+    background-color: #0288d1;
+    color: white;
+  }
+  
+  .edit-button:hover {
+    background-color: #026aa7;
+  }
+  
+  .delete-button {
+    background-color: #d32f2f;
+    color: white;
+  }
+  
+  .delete-button:hover {
+    background-color: #b71c1c;
+  }
+  
+  /* No Data Row */
+  .no-data {
+    text-align: center;
+    padding: 15px;
+    color: gray;
+    font-size: 14px;
+  }
+  

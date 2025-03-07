@@ -1,0 +1,74 @@
+
+/* CSS (ProjectForm.css) */
+
+.project-form-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: start;
+    margin-left: 26px;
+  }
+  
+  .project-form-title {
+    font-size: 20px;
+    
+    margin-bottom: 20px;
+  }
+  
+  .project-form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .project-form-group {
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+  }
+  
+  .project-form-group.full-width {
+    width: 100%;
+  }
+  
+  .project-form-group label {
+    
+    margin-bottom: 5px;
+  }
+  
+  .project-form-input,
+  .project-form-select,
+  .project-form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  .project-form-textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  .project-form-button {
+    width: 21%;
+    padding: 3px;
+    background: linear-gradient(to right, #7a0045, #9b0065);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-left: 318px;
+
+  }
+  
+  .project-form-button:hover {
+    background: linear-gradient(to right, #9b0065, #7a0045);
+  }
+  

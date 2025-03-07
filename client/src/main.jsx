@@ -6,28 +6,48 @@ import AdminLogin from "../src/Admin/AdminLogin";
 import AdminDashboard from "../src/Admin/AdminDashboard/AdminDashboard";
 import EmployeeList from "../src/Admin/EmployeesList/EmployeeList";
 import ProjectList from "../src/Admin/ProjectsList/ProjectList";
-import ManagerLogin from "../src/Manager/ManagerLogin/Managerlogin";
+
 
 import "./index.css";
 import EmployeeRegister from "./Admin/EmployeeRegister/EmployeeRegister";
 import Adminpanel from "./Admin/AdminPannel/AdminPanel";
+import EventEdit from "./Admin/Events/EventEdit";
 
+import NotificationsList from "./Admin/Notfications/NotificationsList";
+
+
+import FeedbackPage from "./Employee/Feedback/FeedbackPage";
+
+import EventView from "./Admin/Events/EventView";
+
+import EventCards from "./Employee/Events/EventCards";
 
 import  EmployeePanel from "./Employee/EmployeePannel/EmployeePanel";
+import  ProjectForm from "./Manager/AddProject/ProjectForm";
+
+import NotificationsPage from "./Employee/Notfications/NotificationsPage";
+
+import EmployeeFeedbackForm from "./Employee/Feedback/EmployeeFeedbackForm";
+import EventsList from "./Admin/Events/EventsList";
+import EventForm from "./Admin/Events/EvenForm";
+import ManagerLogin from "./ManagerLogin";
+import HRLogin from "./HrLogin";
 
 
 
 
 
-import AddProject from "./Manager/AddProject/AddProject";
+
 
 import EmployeeView from "./Admin/EmployeeView/EmployeeView";
 import EmployeeDashboard from "./Employee/EmployeeDashboard/EmployeeDashboard";
-import EmployeeProtectedRoute from "./components/EmployeeProtectedRoute";
+
 import Feedbacks from "./Admin/Feedback/Feedbacks";
 import Notifications from "./Admin/Notfications/Notifications";
 import Employeedit from "./Admin/Employeeedit/Employeedit";
 import EmployeeProfile from  "./Employee/Profile/EmployeeProfile";
+import EmployeeLogin from "./EmployeeLogin";
+import HrPanel from "./Hr/HRPanel/HRPanel";
 
 
 const router = createBrowserRouter([
@@ -69,6 +89,31 @@ const router = createBrowserRouter([
         path: "register-employee",
         element: <EmployeeRegister />,
       },
+      {
+        path: "add-project",
+        element: <ProjectForm />,
+      },
+      {
+        path:"events",
+        element:<EventsList/>
+      },
+      {
+        path:"add-event",
+        element:<EventForm/>
+      },
+      {
+        path:"view-event",
+        element:<EventView/>
+      },
+      {
+        path:"edit-event",
+        element:<EventEdit/>
+      },
+
+      {
+        path:"notificationslist",
+        element:<NotificationsList/>
+      }
     ],
   },
   {
@@ -87,18 +132,47 @@ const router = createBrowserRouter([
           path: "profile",
           element: <EmployeeProfile />,
         },
-        {
-          path: "add-project",
-          element: <AddProject />,
-         },
+       
       {
         path: "view-employee/:id",
         element: <EmployeeView />,
       },
+      {
+        path: "projects",
+        element: <ProjectList />,
+      },
+  
+      {
+        path: "notifications",
+        element: <NotificationsPage />,
+      },
+
+      {
+
+        path:"feedback",
+        element:<EmployeeFeedbackForm/>
+      },
+      {
+        path:"feedbacks",
+        element:<FeedbackPage/>
+      },
+      {
+        path:"events",
+        element:<EventCards/>
+      },
+
+      
+
     
     
     
     ],
+  },
+
+
+  {
+    path: "/hr-panel",
+    element: <HrPanel/>
   },
   
   {
@@ -106,9 +180,18 @@ const router = createBrowserRouter([
     element: <AdminLogin />,
   },
   {
-    path: "/employee-login",
+    path: "/manager-login",
     element: <ManagerLogin />,
+
   },
+  {
+    path: "/HR-login",
+    element: <HRLogin />,
+  },
+  {
+    path: "/employee-login",
+    element: <EmployeeLogin />,
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(

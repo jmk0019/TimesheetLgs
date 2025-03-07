@@ -1,0 +1,81 @@
+/* Notifications Page Container */
+.notifications-container {
+    width: 50%;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  /* Header */
+  .notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .notifications-title {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .notifications-icon {
+    font-size: 24px;
+    color: #7a0045;
+  }
+  
+  /* Notifications List */
+  .notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* Individual Notification Card */
+  .notification-card {
+    background: #f9f9f9;
+    padding: 20px 23px;
+    border-radius: 30px;
+    border-left: 5px solid #7a0045;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+  }
+  
+  /* Notification Subject */
+  .notification-subjectof {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    gap: 10px;
+    
+  }
+  
+  /* Notification Description */
+  .notification-description {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Notification Time and Date */
+  .notification-time {
+    font-size: 12px;
+    color: gray;
+    margin-top: 3px;
+  }
+  
+  /* No Notifications Message */
+  .no-notifications {
+    text-align: center;
+    color: gray;
+    font-size: 16px;
+    padding: 20px;
+  }
+  

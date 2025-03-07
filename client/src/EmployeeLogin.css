@@ -1,0 +1,99 @@
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .employee-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+  }
+  
+  /* Login Box */
+  .employee-login-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .employee-login-box:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Title */
+  .employee-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  /* Input Fields */
+  .employee-input-group {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .employee-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  
+  .employee-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .employee-input:focus {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Login Button */
+  .employee-button {
+    width: 100%;
+    padding: 12px;
+    background: #ffffff;
+    color: #0072ff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .employee-button:hover {
+    background: #0056b3;
+    color: white;
+  }
+  
+  /* Forgot Password */
+  .employee-forgot-password {
+    margin-top: 12px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .employee-forgot-password:hover {
+    color: #dcdcdc;
+  }
+  

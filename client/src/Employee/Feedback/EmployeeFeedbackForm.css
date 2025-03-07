@@ -1,0 +1,65 @@
+/* Feedback Form Container */
+.feedback-form-container {
+    width: 70%;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 8px;
+  }
+  
+  /* Title */
+  .feedback-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  /* Form Group */
+  .feedback-group {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  /* Labels */
+  .feedback-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  /* Input & Textarea */
+  .feedback-input,
+  .feedback-textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  /* Textarea */
+  .feedback-textarea {
+    resize: none;
+  }
+  
+  /* Submit Button */
+  .feedback-button {
+    background-color: #7a0045;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius:10px;
+    cursor: pointer;
+    width: 30%;
+  }
+  
+  .feedback-button:hover {
+    background-color: #5b0033;
+  }
+  

@@ -10,6 +10,8 @@ import AdminNavbar from "../AdminNavbar/index";
 import "./index.css";
 import logo from  "../Imges/logo.png"
 
+import { MdEvent } from "react-icons/md";
+
 const AdminSideBar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [activeTab, setActiveTab] = useState(1);
@@ -75,10 +77,21 @@ const AdminSideBar = () => {
             className={`menu-item ${activeTab === 5 ? "active" : ""}`}
             onClick={() => setActiveTab(5)}
           >
-            <Link to="/adminpanel/notfication/">
+            <Link to="/adminpanel/notificationslist/">
               <IoNotificationsOutline className="icon" /> <span>Notifications</span>
             </Link>
           </li>
+          
+          <li
+            className={`menu-item ${activeTab === 6 ? "active" : ""}`}
+            onClick={() => setActiveTab(6)}
+          >
+            <Link to="/adminpanel/events/">
+              <MdEvent className="icon" /> <span>Events</span>
+            </Link>
+          </li>
+
+     
 
           <li className="menu-item" onClick={handleLogout}>
             <IoLogOut className="icon" /> <span>Logout</span>

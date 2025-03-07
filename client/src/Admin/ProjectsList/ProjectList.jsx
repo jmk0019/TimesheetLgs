@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Toast from "../../components/utlis/toast";
 import Loader from "../../components/Loader";
 import "./index.css"; // Import the CSS file
+import ProjectForm from "../../Manager/AddProject/ProjectForm";
 
 // Dummy data for projects
 const dummyProjects = [
@@ -63,7 +64,7 @@ function ProjectList() {
     <div className="customer-list-main-container">
       <div className="customer-list-header">
         <p className="app-para-heading-3 m-0">Projects</p>
-        <Link to="/adminpanel/register-project">
+        <Link to="/adminpanel/add-project">
           <button className="main-button-1">Add Project</button>
         </Link>
       </div>

@@ -1,0 +1,87 @@
+/* HR Navbar */
+.hr-navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, #16007a, #7a0045);
+    color: #fff;
+    padding: 10px 20px;
+    width: 100%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    height: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .hr-navbar-title {
+    font-size: 17px;
+  }
+  
+  /* Navbar Right Section */
+  .hr-navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Icons (Profile, Notifications) */
+  .hr-navbar-icon-container {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .hr-navbar-icon {
+    font-size: 24px;
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .hr-navbar-icon:hover {
+    color: white;
+  }
+  
+  /* Notifications Dropdown */
+  .hr-notification-dropdown {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    z-index: 10;
+  }
+  
+  .hr-notification-dropdown p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .hr-notification-dropdown p:hover {
+    background-color: #f5f5f5;
+    padding: 5px;
+    border-radius: 3px;
+  }
+  
+  /* Logout Button */
+  .hr-logout-button {
+    background-color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: 4px;
+    padding: 6px 15px;
+    color: black;
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .hr-logout-button:hover {
+    background-color: #f0f0f0;
+  }
+  

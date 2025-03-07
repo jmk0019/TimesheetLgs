@@ -74,7 +74,7 @@ const EmployeeSideBar = () => {
           </Link>
 
           <Link
-            to="/employeepanel/feedback"
+            to="/employeepanel/feedbacks"
             className={`employee-sidebar-button ${activeTab === 5 ? "active" : ""}`}
             onClick={() => setActiveTab(5)}
           >

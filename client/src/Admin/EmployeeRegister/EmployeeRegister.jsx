@@ -228,7 +228,8 @@ const EmployeeRegister = () => {
           >
             <option value="">Select Role</option>
             <option value="Employee">Employee</option>
-            <option value="Manager">Manager</option>
+            <option value="Manager">Project Manager</option>
+            <option value="HR">HR</option>
           </select>
         </div>
 

@@ -1,0 +1,104 @@
+/* Container */
+.events-list-container {
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-left: 40px;
+  }
+  
+  /* Header with Add Button */
+  .events-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .events-list-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Add Event Button */
+  .add-event-btn {
+    background: linear-gradient(to bottom, #16007a, #7a0045);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-event-btn:hover {
+    background-color: #1e7e34;
+  }
+  
+  /* Table */
+  .events-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .events-table th,
+  .events-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .events-table th {
+    background-color: #7a0045;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Action Buttons */
+  .action-buttons button {
+    margin: 5px;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .view-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .edit-btn {
+    background-color: #ffc107;
+    color: black;
+  }
+  
+  .delete-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .view-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .edit-btn:hover {
+    background-color: #d39e00;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c82333;
+  }
+  
+  /* No Events Message */
+  .no-events {
+    text-align: center;
+    font-size: 16px;
+    color: gray;
+    padding: 20px;
+  }
+  

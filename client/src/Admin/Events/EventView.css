@@ -1,0 +1,50 @@
+.event-view-container {
+  width: 90%;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  height: 90%;
+}
+
+.event-view-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.event-view-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.event-view-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.event-view-info h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #7a0045;
+}
+
+.event-view-info p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.event-view-date {
+  font-size: 14px;
+  color: #777;
+  font-weight: bold;
+}
