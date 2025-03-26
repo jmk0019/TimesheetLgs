@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoLogOut, IoNotificationsOutline } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 import Cookies from "js-cookie";
@@ -38,7 +38,9 @@ const AdminNavbar = () => {
 
         {/* Profile Icon */}
         <div className="navbar-icon-container">
+        <Link to="/adminpanel/adminprofile/">
           <FaUserCircle className="navbar-icon" />
+          </Link>
         </div>
 
         {/* Logout Button */}

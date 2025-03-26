@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 import Toast from "../../components/utlis/toast";
 import "../admin.css";
+
 
 const EmployeeRegister = () => {
   const [details, setDetails] = useState({
@@ -9,23 +11,19 @@ const EmployeeRegister = () => {
     mobile_no: "",
     email: "",
     designation: "",
-    departement: "",
+    department: "",
     password: "",
     empId: "",
     confirm_password: "",
-    address: "",
+    dob: "",
     role: "",
-  });
+    position : "",
+    status: "",
 
-  //   const [files, setFiles] = useState({
-  //     aadhar_card_front: null,
-  //     aadhar_card_back: null,
-  //     pancard: null,
-  //   });
+  });
 
   const [passwordMismatch, setPasswordMismatch] = useState(false);
   const [buttonLoader, setButtonLoader] = useState(false);
-
   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
@@ -33,71 +31,62 @@ const EmployeeRegister = () => {
     setDetails((prevDetails) => ({ ...prevDetails, [name]: value }));
   };
 
-  //   const handleFileChange = (event) => {
-  //     const { name, files: selectedFiles } = event.target;
-  //     setFiles((prevFiles) => ({ ...prevFiles, [name]: selectedFiles[0] }));
-  //   };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     setButtonLoader(true);
+
     if (details.password !== details.confirm_password) {
       setPasswordMismatch(true);
+      setButtonLoader(false);
       return;
     }
 
     setPasswordMismatch(false);
     const formData = new FormData();
 
-    // Append text fields to formData
     for (const key in details) {
       if (key !== "confirm_password") {
         formData.append(key, details[key]);
       }
     }
 
-    // Append file fields to formData
-    // for (const key in files) {
-    //   formData.append(key, files[key]);
-    // }
+    // Retrieve token from cookies
+    const token = Cookies.get("token");
 
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_BASE_URL}salesregister`,
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const response = await fetch("https://timesheet.labyrinthglobalsolution.site/api/admin/register", {
+        method: "POST",
+        headers: {
+          
+          Authorization: `Bearer ${token}`, // Token from cookies
+        },
+        body: formData,
+      });
+      
+
+
+      const data = await response.json();
+      setButtonLoader(false);
+
       if (response.ok) {
-        setButtonLoader(false);
-        const data = await response.json();
         Toast.fire({ icon: "success", title: data.message });
         setDetails({
           name: "",
           mobile_no: "",
           email: "",
           designation: "",
-          departement: "",
-
+          department: "",
           password: "",
           empId: "",
           confirm_password: "",
-          address: "",
-          pincode: "",
+          dob: "",
           role: "",
+          position : "",
+          status: "",
         });
-        // setFiles({
-        //   aadhar_card_front: null,
-        //   aadhar_card_back: null,
-        //   pancard: null,
-        // });
         navigate("/adminpanel/marketing-list");
       } else {
-        const data = await response.json();
         Toast.fire({ icon: "error", title: data.message });
-
-        setButtonLoader(false);
       }
     } catch (error) {
       Toast.fire({ icon: "error", title: error.message });
@@ -111,10 +100,11 @@ const EmployeeRegister = () => {
         <div className="register-staff-header-container">
           <h2 className="register-staff-heading">Employee Registration</h2>
         </div>
+
+        {/* Full Name */}
         <div className="register-staff-input-container">
           <label className="register-staff-label">
-            Full Name
-            <span className="customer-enquiry-form-required">*</span>
+            Full Name<span className="customer-enquiry-form-required">*</span>
           </label>
           <input
             type="text"
@@ -126,10 +116,11 @@ const EmployeeRegister = () => {
             required
           />
         </div>
+
+        {/* Mobile Number */}
         <div className="register-staff-input-container">
           <label className="register-staff-label">
-            Mobile No.
-            <span className="customer-enquiry-form-required">*</span>
+            Mobile No.<span className="customer-enquiry-form-required">*</span>
           </label>
           <input
             className="register-staff-input"
@@ -139,8 +130,6 @@ const EmployeeRegister = () => {
             name="mobile_no"
             onChange={handleInputChange}
             required
-            maxLength={10}
-            minLength={10}
             onInput={(e) => {
               if (e.target.value.length > 10) {
                 e.target.value = e.target.value.slice(0, 10);
@@ -148,10 +137,11 @@ const EmployeeRegister = () => {
             }}
           />
         </div>
+
+        {/* Email */}
         <div className="register-staff-input-container">
           <label className="register-staff-label">
-            Email ID
-            <span className="customer-enquiry-form-required">*</span>
+            Email ID<span className="customer-enquiry-form-required">*</span>
           </label>
           <input
             className="register-staff-input"
@@ -163,10 +153,11 @@ const EmployeeRegister = () => {
             required
           />
         </div>
+
+        {/* Employee ID */}
         <div className="register-staff-input-container">
           <label className="register-staff-label">
-            Employee ID
-            <span className="customer-enquiry-form-required">*</span>
+            Employee ID<span className="customer-enquiry-form-required">*</span>
           </label>
           <input
             className="register-staff-input"
@@ -178,10 +169,11 @@ const EmployeeRegister = () => {
             required
           />
         </div>
+
+        {/* Designation */}
         <div className="register-staff-input-container">
           <label className="register-staff-label">
-            Designation
-            <span className="customer-enquiry-form-required">*</span>
+            Designation<span className="customer-enquiry-form-required">*</span>
           </label>
           <input
             className="register-staff-input"
@@ -193,30 +185,31 @@ const EmployeeRegister = () => {
             required
           />
         </div>
+
+        {/* Department */}
         <div className="register-staff-input-container">
           <label className="register-staff-label">
-            Departement
-            <span className="customer-enquiry-form-required">*</span>
+            Department<span className="customer-enquiry-form-required">*</span>
           </label>
           <select
             required
             className="register-staff-input"
-            value={details.departement}
-            name="departement"
+            value={details.department}
+            name="department"
             onChange={handleInputChange}
-            
           >
-            <option value="">Select Role</option>
-            <option value="Employee">Polarion</option>
-            <option value="Manager">Mendix</option>
-            <option value="Manager">Sales</option>
-            <option value="Manager">Conventational</option>
+            <option value="">Select Department</option>
+            <option value="Polarion">Polarion</option>
+            <option value="Mendix">Mendix</option>
+            <option value="Sales">Sales</option>
+            <option value="Conventional">Conventional</option>
           </select>
         </div>
+
+        {/* Role */}
         <div className="register-staff-input-container">
           <label className="register-staff-label">
-            Role
-            <span className="customer-enquiry-form-required">*</span>
+            Role<span className="customer-enquiry-form-required">*</span>
           </label>
           <select
             required
@@ -224,35 +217,49 @@ const EmployeeRegister = () => {
             value={details.role}
             name="role"
             onChange={handleInputChange}
-            
           >
             <option value="">Select Role</option>
-            <option value="Employee">Employee</option>
-            <option value="Manager">Project Manager</option>
-            <option value="HR">HR</option>
+            <option value="Employee">user</option>
+            <option value="Manager">project-manager</option>
+            <option value="HR">hr</option>
           </select>
         </div>
 
-
+        {/* Position */}
         <div className="register-staff-input-container">
           <label className="register-staff-label">
-            DOB
-            <span className="customer-enquiry-form-required">*</span>
+            Position<span className="customer-enquiry-form-required">*</span>
           </label>
           <input
             className="register-staff-input"
-            type="date"
-           
-            value={details.address}
-            name="address"
+            type="text"
+            placeholder="Enter Position"
+            name="position"
+            value={details.position}
             onChange={handleInputChange}
             required
           />
         </div>
+
+        {/* DOB */}
         <div className="register-staff-input-container">
           <label className="register-staff-label">
-            Password
-            <span className="customer-enquiry-form-required">*</span>
+            DOB<span className="customer-enquiry-form-required">*</span>
+          </label>
+          <input
+            className="register-staff-input"
+            type="date"
+            value={details.dob}
+            name="dob"
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+
+        {/* Password */}
+        <div className="register-staff-input-container">
+          <label className="register-staff-label">
+            Password<span className="customer-enquiry-form-required">*</span>
           </label>
           <input
             className="register-staff-input"
@@ -264,10 +271,11 @@ const EmployeeRegister = () => {
             required
           />
         </div>
+
+        {/* Confirm Password */}
         <div className="register-staff-input-container">
           <label className="register-staff-label">
-            Confirm Password
-            <span className="customer-enquiry-form-required">*</span>
+            Confirm Password<span className="customer-enquiry-form-required">*</span>
           </label>
           <input
             className="register-staff-input"
@@ -278,51 +286,29 @@ const EmployeeRegister = () => {
             onChange={handleInputChange}
             required
           />
-          {passwordMismatch && (
-            <p className="error-message">Passwords do not match</p>
-          )}
+          {passwordMismatch && <p className="error-message">Passwords do not match</p>}
         </div>
-     
-
-        {/* <div className="register-staff-input-container">
-          <label className="register-staff-label">
-            Pan Card
-            <span className="customer-enquiry-form-required"></span>
-          </label>
-          <input
-            className="register-staff-file"
-            type="file"
-            name="pancard"
-            onChange={handleFileChange}
-          />
-        </div>
+       
         <div className="register-staff-input-container">
           <label className="register-staff-label">
-            Aadhar Card Front
-            <span className="customer-enquiry-form-required"></span>
+            Status<span className="customer-enquiry-form-required">*</span>
           </label>
-          <input
-            className="register-staff-file"
-            type="file"
-            name="aadhar_card_front"
-            onChange={handleFileChange}
-          />
-        </div>
-        <div className="register-staff-input-container">
-          <label className="register-staff-label">Aadhar Card Back</label>
-          <input
-            className="register-staff-file"
-            type="file"
-            name="aadhar_card_back"
-            onChange={handleFileChange}
-          />
-        </div> */}
-        <div className="register-staff-button-container" style={{color: "#7a0045"}} >
-          <button
-            className="register-staff-button"
-            disabled={buttonLoader}
-            type="submit"
+          <select
+            required
+            className="register-staff-input"
+            value={details.status}
+            name="status"
+            onChange={handleInputChange}
           >
+            <option value="">Select Status</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+
+
+        <div className="register-staff-button-container">
+          <button className="register-staff-button" disabled={buttonLoader} type="submit">
             {buttonLoader ? <div className="button-loader"></div> : "Submit"}
           </button>
         </div>

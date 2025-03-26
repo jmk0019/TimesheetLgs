@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie"; // Import js-cookie
 import Toast from "../../components/utlis/toast";
 import "./index.css";
 
@@ -17,18 +18,24 @@ export default function AdminLogin() {
     e.preventDefault();
     setError("");
 
-    fetch(`adminlogin`, {
+    const formDataToSend = new FormData();
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("password", formData.password);
+
+    fetch("https://timesheet.labyrinthglobalsolution.site/api/login", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
+      body: formDataToSend, // Sending form-data
     })
       .then((response) => response.json().then((data) => ({ status: response.status, data })))
       .then(({ status, data }) => {
         if (status === 200) {
           Toast.fire({ icon: "success", title: data.message });
-          sessionStorage.setItem("token", data.token);
-          sessionStorage.setItem("role", data.role);
-          navigate(data.role === "Admin" ? "/adminpannel" : "/employeepanel");
+
+          // Save token in cookies with expiry of 1 day
+          Cookies.set("token", data.token, { expires: 1, secure: true, sameSite: "Strict" });
+          Cookies.set("role", data.role, { expires: 1, secure: true, sameSite: "Strict" });
+
+          navigate(data.role === "admin" ? "/adminpanel/dashboard" : "/employeepanel");
         } else if (status === 405) {
           Toast.fire({ icon: "error", title: data.message });
           navigate("/packageExpired");

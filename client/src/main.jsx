@@ -32,6 +32,7 @@ import EventsList from "./Admin/Events/EventsList";
 import EventForm from "./Admin/Events/EvenForm";
 import ManagerLogin from "./ManagerLogin";
 import HRLogin from "./HrLogin";
+import EmployeeRoute from "./Employee/EmployeeProtect/EmployeeProtectedRoute";
 
 
 
@@ -48,12 +49,20 @@ import Employeedit from "./Admin/Employeeedit/Employeedit";
 import EmployeeProfile from  "./Employee/Profile/EmployeeProfile";
 import EmployeeLogin from "./EmployeeLogin";
 import HrPanel from "./Hr/HRPanel/HRPanel";
+import AdminProtectedRoute from "./Admin/AdminProtectedRoute/AdminProtectedRoute";
+import AdminProfile from "./Admin/AdminProfile";
 
 
 const router = createBrowserRouter([
   {
+
     path: "/adminpanel",
-    element: <Adminpanel />,
+    
+
+    element:
+    <AdminProtectedRoute>
+    <Adminpanel />
+    </AdminProtectedRoute>,
     children: [
       {
         path: "dashboard",
@@ -102,8 +111,12 @@ const router = createBrowserRouter([
         element:<EventForm/>
       },
       {
-        path:"view-event",
-        element:<EventView/>
+        path:"event-cards",
+        element:<EventCards/>
+      },
+      {
+        path:"adminprofile",
+        element:<AdminProfile/>
       },
       {
         path:"edit-event",
@@ -119,7 +132,9 @@ const router = createBrowserRouter([
   {
     path: "/employeepanel",
     element: (
+      <EmployeeRoute>
       <EmployeePanel />
+      </EmployeeRoute>
     
     ),
     children: [
